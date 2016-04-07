@@ -5,9 +5,11 @@ app.get('/', function (req, res) {
     res.sendfile('./index.html');
 });
 
-var server = app.listen(3000, function () {
+app.use(express.static(__dirname + '/public'));
+
+var server = app.listen(80, function () {
   var host = "localhost";
-  var port = 3000;
+  var port = 80;
 
   console.log('Example app listening at http://%s:%s', host, port);
 });
